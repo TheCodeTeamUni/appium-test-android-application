@@ -5,7 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class CandidateHomePage extends BasePage{
+public class CandidateHomePage extends BasePage {
 
     @AndroidFindBy(id = "com.example.vinilos:id/textView3")
     private AndroidElement candidateHomeTitle;
@@ -26,7 +26,7 @@ public class CandidateHomePage extends BasePage{
         super(driver);
     }
 
-    public MobileElement candidateHomeTitle(){
+    public MobileElement candidateHomeTitle() {
         candidateHomeTitle.getText();
         return candidateHomeTitle;
     }

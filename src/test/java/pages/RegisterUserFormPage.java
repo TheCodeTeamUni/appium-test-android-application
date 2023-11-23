@@ -5,7 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class RegisterUserFormPage extends BasePage{
+public class RegisterUserFormPage extends BasePage {
 
     @AndroidFindBy(id = "com.example.vinilos:id/userNameEt")
     private AndroidElement signUpUserNameTextView;
