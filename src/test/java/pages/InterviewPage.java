@@ -15,6 +15,9 @@ public class InterviewPage extends BasePage{
     @AndroidFindBy(id = "com.example.vinilos:id/list_interview_icon")
     private AndroidElement ListInterviewIconButton;
 
+    @AndroidFindBy(id = "com.example.vinilos:id/textVie3")
+    private AndroidElement assertInterviewCreated;
+
     //********************* Interview Form ******************//
 
     @AndroidFindBy(id = "com.example.vinilos:id/companyNameEt")
@@ -51,5 +54,64 @@ public class InterviewPage extends BasePage{
 
     public InterviewPage(AppiumDriver<MobileElement> driver) {
         super(driver);
+    }
+
+    //********************* Select Option ******************//
+    public void createInterviewIconButton() {
+        createInterviewIconButton.click();
+    }
+
+    public void ListInterviewIconButton() {
+        ListInterviewIconButton.click();
+    }
+
+    public MobileElement assertInterviewCreated() {
+        assertInterviewCreated.getText();
+        return assertInterviewCreated;
+    }
+
+    //********************* Interview Form ******************//
+    public void interviewCompanyNameTextView(String string) {
+        interviewCompanyNameTextView.sendKeys(string);
+    }
+
+    public void interviewIdCandidateTextView(String string) {
+        interviewIdCandidateTextView.sendKeys(string);
+    }
+
+    public void interviewCandidateNameTextView(String string) {
+        interviewCandidateNameTextView.sendKeys(string);
+    }
+
+    public void interviewCandidateLastNameTextView(String string) {
+        interviewCandidateLastNameTextView.sendKeys(string);
+    }
+
+    public void interviewRolTextView(String string) {
+        interviewRolTextView.sendKeys(string);
+    }
+
+    public void interviewDateTextView(String string) {
+        interviewDateTextView.sendKeys(string);
+    }
+
+    public void interviewNotesTextView(String string) {
+        interviewNotesTextView.sendKeys(string);
+    }
+
+    public void saveInformationButton() {
+        saveInformationButton.click();
+    }
+
+    //********************* Interview List Elements ******************//
+
+    public MobileElement InterviewListName() {
+        InterviewListName.getText();
+        return InterviewListName;
+    }
+
+    public MobileElement InterviewListDate() {
+        InterviewListDate.getText();
+        return InterviewListDate;
     }
 }

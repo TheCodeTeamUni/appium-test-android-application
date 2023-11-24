@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 
-public class CompanyCandidateListTest extends BaseClass {
+public class CompanyProfileTest extends BaseClass {
 
     @Test(priority = 1)
     public void createCompanyAndListCandidatesSuccess() throws Exception {
@@ -82,6 +82,55 @@ public class CompanyCandidateListTest extends BaseClass {
 
         projectPage.listProjectIconButton();
         MobileElement element = projectPage.projectListName();
+        boolean isDisplayed = element.isDisplayed();
+        Assert.assertTrue(isDisplayed);
+        System.out.println("Successful - Test OK");
+
+    }
+
+    @Test(priority = 4)
+    public void createInterviewSuccess() throws Exception {
+        LoginPage loginPage = new LoginPage(driver);
+        CompanyHomePage companyHomePage = new CompanyHomePage(driver);
+        InterviewPage interviewPage = new InterviewPage(driver);
+        System.out.println("Login User Test started");
+
+        loginPage.loginEmailTextView("corporate@mail.com");
+        loginPage.loginPasswordTextView("AA1234aa");
+        loginPage.loginButton();
+
+        companyHomePage.companyInterviewsButton();
+
+        interviewPage.createInterviewIconButton();
+        interviewPage.interviewCompanyNameTextView("Crehana");
+        interviewPage.interviewIdCandidateTextView("80123456");
+        interviewPage.interviewCandidateNameTextView("Manuel");
+        interviewPage.interviewCandidateLastNameTextView("Morales");
+        interviewPage.interviewRolTextView("Ingeniero Java");
+        interviewPage.interviewDateTextView("12/12/2023 12:00");
+        interviewPage.interviewNotesTextView("Entrevista para el rol de Java");
+        interviewPage.saveInformationButton();
+
+        MobileElement assertProject = interviewPage.assertInterviewCreated();
+        Assert.assertEquals(assertProject.getText(), "Create Interview");
+        System.out.println("Successful - Test OK..." + assertProject.getText());
+    }
+
+    @Test(priority = 5)
+    public void listInterviewSuccess() throws Exception {
+        LoginPage loginPage = new LoginPage(driver);
+        CompanyHomePage companyHomePage = new CompanyHomePage(driver);
+        InterviewPage interviewPage = new InterviewPage(driver);
+        System.out.println("Login User Test started");
+
+        loginPage.loginEmailTextView("corporate@mail.com");
+        loginPage.loginPasswordTextView("AA1234aa");
+        loginPage.loginButton();
+
+        companyHomePage.companyInterviewsButton();
+
+        interviewPage.ListInterviewIconButton();
+        MobileElement element = interviewPage.InterviewListName();
         boolean isDisplayed = element.isDisplayed();
         Assert.assertTrue(isDisplayed);
         System.out.println("Successful - Test OK");
