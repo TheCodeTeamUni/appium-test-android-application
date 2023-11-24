@@ -22,6 +22,9 @@ public class CandidateHomePage extends BasePage {
     @AndroidFindBy(id = "com.example.vinilos:id/skill_icon")
     private AndroidElement candidateSkillInformationButton;
 
+    @AndroidFindBy(id = "com.example.vinilos:id/textView3")
+    private AndroidElement assertRegisterCandidateInformation;
+
     public CandidateHomePage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
@@ -45,5 +48,10 @@ public class CandidateHomePage extends BasePage {
 
     public void candidateSkillInformationButton() {
         candidateSkillInformationButton.click();
+    }
+
+    public MobileElement assertRegisterCandidateInformation() {
+        assertRegisterCandidateInformation.getText();
+        return assertRegisterCandidateInformation;
     }
 }

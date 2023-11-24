@@ -30,6 +30,10 @@ public class LoginPage extends BasePage {
     @AndroidFindBy(id = "android:id/button1")
     private AndroidElement loginErrorMessageButton;
 
+    @AndroidFindBy(id = "com.example.vinilos:id/textView2")
+    private AndroidElement assertValidateRegisterUser;
+
+
     public LoginPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
@@ -66,5 +70,10 @@ public class LoginPage extends BasePage {
 
     public void loginErrorMessageButton() {
         loginErrorMessageButton.click();
+    }
+
+    public MobileElement assertValidateRegisterUser() {
+        assertValidateRegisterUser.getText();
+        return assertValidateRegisterUser;
     }
 }
