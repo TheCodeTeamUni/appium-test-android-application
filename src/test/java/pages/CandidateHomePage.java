@@ -5,7 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class CandidateHomePage extends BasePage{
+public class CandidateHomePage extends BasePage {
 
     @AndroidFindBy(id = "com.example.vinilos:id/textView3")
     private AndroidElement candidateHomeTitle;
@@ -22,11 +22,14 @@ public class CandidateHomePage extends BasePage{
     @AndroidFindBy(id = "com.example.vinilos:id/skill_icon")
     private AndroidElement candidateSkillInformationButton;
 
+    @AndroidFindBy(id = "com.example.vinilos:id/textView3")
+    private AndroidElement assertRegisterCandidateInformation;
+
     public CandidateHomePage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 
-    public MobileElement candidateHomeTitle(){
+    public MobileElement candidateHomeTitle() {
         candidateHomeTitle.getText();
         return candidateHomeTitle;
     }
@@ -45,5 +48,10 @@ public class CandidateHomePage extends BasePage{
 
     public void candidateSkillInformationButton() {
         candidateSkillInformationButton.click();
+    }
+
+    public MobileElement assertRegisterCandidateInformation() {
+        assertRegisterCandidateInformation.getText();
+        return assertRegisterCandidateInformation;
     }
 }

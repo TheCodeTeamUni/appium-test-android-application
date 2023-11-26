@@ -2,9 +2,10 @@ package baseClass;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,8 +17,7 @@ public class BaseClass {
     @BeforeMethod
 
     @Parameters({"deviceName", "udid", "platformVersion", "url", "automationName", "app"})
-    public void setUp(String deviceName, String udid, String platformVersion, String url, String automationName, String app) throws InterruptedException, MalformedURLException
-    {
+    public void setUp(String deviceName, String udid, String platformVersion, String url, String automationName, String app) throws InterruptedException, MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("platformName", "Android");
         cap.setCapability("appium:platformVersion", platformVersion);

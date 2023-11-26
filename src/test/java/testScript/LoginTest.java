@@ -8,13 +8,10 @@ import pages.CandidateHomePage;
 import pages.CompanyHomePage;
 import pages.LoginPage;
 
-import java.util.TreeMap;
-import java.util.concurrent.TimeUnit;
-
 public class LoginTest extends BaseClass {
 
     @Test
-    public void candidateLoginSuccess()throws Exception{
+    public void candidateLoginSuccess() throws Exception {
         LoginPage loginPage = new LoginPage(driver);
         CandidateHomePage candidateHome = new CandidateHomePage(driver);
         System.out.println("Login User Test started");
@@ -30,7 +27,7 @@ public class LoginTest extends BaseClass {
     }
 
     @Test
-    public void candidateLoginInvalidEmail()throws Exception{
+    public void candidateLoginInvalidEmail() throws Exception {
         LoginPage loginPage = new LoginPage(driver);
         System.out.println("Login User Test started");
 
@@ -45,7 +42,7 @@ public class LoginTest extends BaseClass {
     }
 
     @Test
-    public void candidateLoginInvalidPassword()throws Exception{
+    public void candidateLoginInvalidPassword() throws Exception {
         LoginPage loginPage = new LoginPage(driver);
         System.out.println("Login User Test started");
 
@@ -60,7 +57,7 @@ public class LoginTest extends BaseClass {
     }
 
     @Test
-    public void companyLoginSuccess()throws Exception{
+    public void companyLoginSuccess() throws Exception {
         LoginPage loginPage = new LoginPage(driver);
         CompanyHomePage companyHome = new CompanyHomePage(driver);
         System.out.println("Login User Test started");
@@ -81,7 +78,7 @@ public class LoginTest extends BaseClass {
     }
 
     @Test
-    public void companyLoginInvalidEmail()throws Exception{
+    public void companyLoginInvalidEmail() throws Exception {
         LoginPage loginPage = new LoginPage(driver);
         System.out.println("Login User Test started");
 
@@ -96,7 +93,7 @@ public class LoginTest extends BaseClass {
     }
 
     @Test
-    public void companyLoginInvalidPassword()throws Exception{
+    public void companyLoginInvalidPassword() throws Exception {
         LoginPage loginPage = new LoginPage(driver);
         System.out.println("Login User Test started");
 
