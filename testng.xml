@@ -9,6 +9,8 @@
         <parameter name="app"
                    value="/Users/mmorales/Documents/Personal/uniandes/android/proyecto_final/apk/app-debug.apk"/>
         <classes>
+            <class name="testScript.LoginTest"/>
+            <class name="testScript.RegisterInformationCandidateTest"/>
             <class name="testScript.CompanyProfileTest"/>
         </classes>
     </test>
